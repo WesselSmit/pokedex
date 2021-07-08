@@ -2,8 +2,8 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
+  static async getInitialProps(context) {
+    const initialProps = await Document.getInitialProps(context)
     return { ...initialProps }
   }
 
@@ -11,7 +11,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta charset="utf-8" />
         </Head>
 
