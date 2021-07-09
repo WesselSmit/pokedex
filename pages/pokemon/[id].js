@@ -1,12 +1,22 @@
+import Head from 'next/head'
 import styles from '../../styles/pokemon.module.css'
 
 
 export default function Pokemon({ pokemon }) {
   return (
     <>
+      <Head>
+        <title>{capitalizePokemonName(pokemon.name)} | Pokedex</title>
+      </Head>
+
       <h1>{pokemon.name}</h1>
     </>
   )
+}
+
+
+function capitalizePokemonName(name) {
+  return name.charAt(0).toUpperCase() + name.slice(1)
 }
 
 

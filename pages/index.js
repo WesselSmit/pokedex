@@ -1,9 +1,14 @@
+import Head from 'next/head'
 import styles from '../styles/home.module.css'
 
 
 export default function Home({ pokemons }) {
   return (
     <>
+      <Head>
+        <title>Browse pokemon | Pokedex</title>
+      </Head>
+
       <h1>List of pokemons</h1>
 
       <ol>
