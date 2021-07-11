@@ -1,0 +1,18 @@
+:root {
+  /* colors */
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-red: #DD4F41;
+
+  /* spaces */
+  --space-lg: 5rem;
+  --space-md: 3rem;
+  --space-sm: 1.5rem;
+
+  /* sizes, widths, heights */
+  --width-site: 120rem;
+  --size-card: 25rem;
+
+  /* borders */
+  --border-radius: .5rem;
+}

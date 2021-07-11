@@ -6,11 +6,6 @@
   padding: 0;
 }
 
-ul,
-ol {
-  padding: 0;
-}
-
 body,
 h1,
 h2,
@@ -30,20 +25,29 @@ dd {
   margin: 0;
 }
 
+html {
+  /* reset default font-size to 10px for easier calculations (62.5% of 16px [browser default] = 10px) */
+  font-size: 62.5%;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  /* set default font-size to 1.6rem to negate above reset */
+  font-size: 1.6rem;
 }
 
 ul,
 ol {
+  padding: 0;
   list-style: none;
 }
 
 article > * + * {
-  margin-top: 1em;
+  margin-top: 1.5rem;
 }
 
 input,
@@ -51,4 +55,8 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+a {
+  text-decoration: none;
 }
