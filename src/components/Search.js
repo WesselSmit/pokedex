@@ -4,7 +4,7 @@ import styles from '../styles/components/Search.module.css'
 export default function Search({ pokemons, setFilteredPokemons }) {
   function filter(e) {
     const input = e.target.value.trim()
-    const isNum = !isNaN(parseInt(input, 10))
+    const isNum = !isNaN(input)
 
     if (!input) {
       setFilteredPokemons(pokemons)
