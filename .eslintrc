@@ -1,6 +1,8 @@
 {
   "extends": ["next", "next/core-web-vitals"],
   "rules": {
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "semi": ["warn", "never"],
+    "react-hooks/exhaustive-deps": ["off"]
   }
 }
