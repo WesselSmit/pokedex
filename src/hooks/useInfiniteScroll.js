@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 
 
-/*
-  Arguments explanation:
-  triggerEl - DOM node to watch using the IntersectionObserver
-  callback - function to call when 'triggerEl' is visible in the viewport
-  options (optional) - custom IntersectionObserver options to overwrite the default options with
-*/
+  // arguments explained:
+  // triggerEl - DOM node to watch using the IntersectionObserver
+  // callback - function to call when 'triggerEl' is visible in the viewport
+  // options (optional) - custom IntersectionObserver options to overwrite the default options with
 
 export default function useInfiniteScroll(triggerEl, callback, options) {
   // overwrite default IntersectionObserver options if necessary
@@ -15,6 +13,7 @@ export default function useInfiniteScroll(triggerEl, callback, options) {
     rootMargin: options?.rootMargin || '0px 0px 0px 0px',
     threshold: options?.threshold || 1,
   }
+  
   
   // create and initialize IntersectionObserver
   const [observer, setObserver] = useState(null)

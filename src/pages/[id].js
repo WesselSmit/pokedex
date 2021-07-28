@@ -23,7 +23,7 @@ export async function getServerSideProps(context) {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon/' + context.params.id)
     data = await res.json()
   } catch (err) {
-    console.log('Could not fetch pokemon data.')
+    console.error('Could not fetch pokemon data.')
   }
 
   if (!data) {

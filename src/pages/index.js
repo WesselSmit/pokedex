@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
 import Search from '../components/Search'
 import Cards from '../components/Cards'
@@ -7,30 +7,49 @@ import Image from 'next/image'
 import styles from '../styles/pages/Home.module.css'
 
 
-export default function Home({ data }) {
-  let { next } = data
-
-  const [pokemons, setPokemons] = useState(data.results)
+export default function Home({ data, next }) {
+  let nextFetchLink = next
+  const [pokemons, setPokemons] = useState(data)
   // const [filteredPokemons, setFilteredPokemons] = useState(pokemons)
-
   const [targetElement, setTargetElement] = useState(null)
 
-  const fetchImages = async () => {
-    // TODO: check of er nog genoeg pokemons zijn om op te uit de API (als alle pokemons opgehaald zijn moet er een early return zijn)
+  const fetchPokemons = async () => {
     try {
-      const res = await fetch(next)
-      const data = await res.json()
+      // stop if all pokemons are already fetched
+      if (!nextFetchLink) {
+        return 
+      }
+
+      // fetch list of next pokemons
+      const res = await fetch(nextFetchLink)
+      const { results, next } = await res.json()
   
-      next = data.next
-  
-      setPokemons((pokemons) => [...pokemons, ...data.results])
+      nextFetchLink = next
+
+      // fetch detailed data for each pokemon
+      const fetchedPokemons = await Promise.all(
+        results.map(async result => {
+          const res = await fetch(result.url)
+          return await res.json()
+        })
+      )
+
+      // the api contains original pokemons and pokemon 'variants'
+      // all 'original' pokemons have an id of lower than 10000
+      // all 'variant' pokemons have an id higher than 10000 
+
+      // filter out all non original (variant) pokemons
+      const originalPokemons = fetchedPokemons.filter(pokemon => pokemon.id < 10000)
+
+      setPokemons(pokemons => [...pokemons, ...originalPokemons])
     } catch (err) {
-      console.log('Could not fetch new pokémons: ', err)
+      console.error('Could not fetch new pokémons: ', err)
     }
   }
-
-  useInfiniteScroll(targetElement, fetchImages, { rootMargin: '1000px' })
   
+  // initialize infinite scroll 
+  useInfiniteScroll(targetElement, fetchPokemons, { rootMargin: '1000px' })
+
   return (
     <>
       <Head>
@@ -59,12 +78,22 @@ export default function Home({ data }) {
 
 
 export async function getStaticProps() {
+  // fetch list of the first few pokemons
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=40')
-  const data = await res.json()
+  const { results, next } = await res.json()
+
+  // fetch detailed data for each pokemon
+  const pokemons = await Promise.all(
+    results.map(async result => {
+      const res = await fetch(result.url)
+      return await res.json()
+    })
+  )
 
   return {
     props: {
-      data
+      data: pokemons,
+      next
     }
   }
 }
