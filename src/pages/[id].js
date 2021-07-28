@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { capitalizePokemonName } from '../utils/names'
+import { displayName } from '../utils/names'
 import styles from '../styles/pages/Pokemon.module.css'
 
 
@@ -7,10 +7,10 @@ export default function Pokemon({ pokemon }) {
   return (
     <>
       <Head>
-        <title>{capitalizePokemonName(pokemon.name)} | Pokédex</title>
+        <title>{displayName(pokemon.name)} | Pokédex</title>
       </Head>
 
-      <h1>{capitalizePokemonName(pokemon.name)}</h1>
+      <h1>{displayName(pokemon.name)}</h1>
     </>
   )
 }

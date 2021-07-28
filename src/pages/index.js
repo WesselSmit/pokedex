@@ -71,6 +71,7 @@ export default function Home({ data, next }) {
         {/* <Cards pokemons={filteredPokemons} /> */}
       </main>
 
+      {/* TODO use element underneath for a loading state */}
       <div ref={setTargetElement}>TARGET</div>
     </>
   )
