@@ -14,8 +14,8 @@
   height: var(--size-card);
   margin: var(--space-sm);
   padding: 1rem;
-  background-color: lightgray;
-  border: 1px solid lightgray;
+  /* add skeleton UI/background for users with slow internet */
+  border: 1px solid transparent;
   border-radius: 1rem;
 }
 

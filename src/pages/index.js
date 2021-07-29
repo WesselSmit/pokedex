@@ -50,13 +50,15 @@ export default function Home({ data, next }) {
   // initialize infinite scroll 
   useInfiniteScroll(targetElement, fetchPokemons, { rootMargin: '1000px' })
 
+  // TODO add loading state
+  // TODO add 'load more' button for when the page isn't loading (this is necessary because if you go back to the overview page from a detail page, then you might be at the bottom of the page but since you didn't scroll the IntersectionObserver did not get triggered)
+  // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
+
   return (
     <>
       <Head>
         <title>Browse pokemon | Pokédex</title>
       </Head>
-
-      <div style={{position:'fixed',top:'100px',zIndex:10000,background:'orange'}}>number of pokemons: {pokemons.length}</div>
 
       <header className={styles.header}>
         <div className={styles.logo}>
