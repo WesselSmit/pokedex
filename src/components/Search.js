@@ -1,4 +1,4 @@
-import styles from '../styles/components/Search.module.css'
+import styles from '../styles/components/search.module.css'
 
 
 export default function Search({ pokemons, setFilteredPokemons }) {

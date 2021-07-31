@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
-import Search from '../components/Search'
-import Cards from '../components/Cards'
+import Search from '../components/search'
+import Cards from '../components/cards'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/pages/Home.module.css'
+import styles from '../styles/pages/home.module.css'
 
 
 export default function Home({ data, next }) {
@@ -53,6 +53,8 @@ export default function Home({ data, next }) {
   // TODO add loading state
   // TODO add 'load more' button for when the page isn't loading (this is necessary because if you go back to the overview page from a detail page, then you might be at the bottom of the page but since you didn't scroll the IntersectionObserver did not get triggered)
   // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
+
+  // TODO clean up JSX template
 
   return (
     <>

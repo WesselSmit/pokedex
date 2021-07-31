@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { typeColor } from '../utils/colors'
 import { displayName } from '../utils/names'
-import styles from '../styles/components/Cards.module.css'
+import styles from '../styles/components/cards.module.css'
 
 
 export default function Card({ pokemons }) {
@@ -18,9 +18,6 @@ export default function Card({ pokemons }) {
                 className={styles.card} 
                 style={{backgroundColor: typeColor(types[0].type.name)}}
               >
-                {
-                  console.log(pokemon)
-                }
                 <Image 
                   src={sprites.other['official-artwork'].front_default} 
                   alt={name} 
