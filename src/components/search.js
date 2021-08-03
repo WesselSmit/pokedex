@@ -25,7 +25,7 @@ export default function Search({ pokemons, setFilteredPokemons }) {
   return (
     <input 
       type="text"
-      placeholder="Search for a pokémon by name or pokédex number"
+      placeholder="Search pokémons by name or index"
       autoComplete="off"
       onChange={filter} 
       className={styles.input} 

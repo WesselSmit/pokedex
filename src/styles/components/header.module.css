@@ -1,0 +1,53 @@
+.container {
+  padding: 0 var(--space-md);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--width-site);
+  margin: auto;
+  padding: var(--space-lg) 0 var(--space-md);
+}
+
+.list {
+  display: flex;
+}
+
+.listItem {
+  margin: 0 var(--space-sm-md);
+}
+
+.listItem:first-child {
+  margin-left: 0;
+}
+
+.listItem:last-child {
+  margin-right: 0;
+}
+
+.link,
+.link:visited {
+  font-size: var(--fsize-md);
+  color: var(--color-text-body);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-text-heading);
+}
+
+.icon {
+  /* gets rid of extra whitespace below the svg */
+  display: block; 
+
+  color: var(--color-text-body);
+  transition: color var(--trans-timing) var(--trans-ease);
+}
+
+.icon:hover,
+.icon:focus {
+  color: var(--color-text-heading);
+}
