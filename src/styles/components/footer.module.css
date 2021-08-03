@@ -34,31 +34,31 @@
 .link,
 .link:visited {
   font-size: var(--fsize-md);
-  color: var(--color-text-body);
+  color: var(--color-text-heading);
 }
 
 .link:hover,
 .link:focus {
-  color: var(--color-text-heading);
+  color: var(--color-text-body);
 }
 
 .icon {
   /* gets rid of extra whitespace below the svg */
   display: block; 
 
-  color: var(--color-text-body);
+  color: var(--color-text-heading);
   transition: color var(--trans-timing) var(--trans-ease);
 }
 
 .icon:hover,
 .icon:focus {
-  color: var(--color-text-heading);
+  color: var(--color-text-body);
 }
 
 .copyright {
   align-self: center;
   font-size: var(--fsize-md);
-  color: var(--color-text-body);
+  color: var(--color-text-heading);
   text-align: center;
 }
 
