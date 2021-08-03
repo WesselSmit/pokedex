@@ -25,19 +25,10 @@ dd {
   margin: 0;
 }
 
-html {
-  /* reset default font-size to 10px for easier calculations (62.5% of 16px [browser default] = 10px) */
-  font-size: 62.5%;
-}
-
 body {
-  min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-
-  /* set default font-size to 1.6rem to negate above reset */
-  font-size: 1.6rem;
 }
 
 ul,

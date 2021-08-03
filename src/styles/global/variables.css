@@ -1,18 +1,29 @@
+/* TODO add font-family + font-size variables */
 :root {
   /* colors */
-  --color-white: #FFF;
-  --color-black: #000;
-  --color-red: #DD4F41;
+  --color-background: #FFFFFF;
+  --color-highlight: #0076ff;
+  --color-text-heading: #000000;
+  --color-text-body: #696969;
 
-  /* spaces */
+  /* spaces (margins & paddings) */
+  --space-xl: 10rem;
   --space-lg: 5rem;
   --space-md: 3rem;
+  --space-sm-md: 2rem;
   --space-sm: 1.5rem;
 
-  /* sizes, widths, heights */
-  --width-site: 120rem;
+  /* sizes (widths & heights) */
+  --width-site: 140rem;
   --size-card: 25rem;
 
+  /* font sizes */
+  --fsize-md: 1.5rem;
+
   /* borders */
-  --border-radius: .5rem;
+  --border-line: 1px solid var(--color-text-heading);
+
+  /* transitions */
+  --trans-timing: 200ms;
+  --trans-ease: ease;
 }

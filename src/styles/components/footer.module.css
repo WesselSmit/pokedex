@@ -1,0 +1,86 @@
+.container {
+  padding: 0 var(--space-md);
+
+  /* make sure the footer is always at the bottom of the page even when the page content isn't 100vh high */
+  margin-top: auto;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--width-site);
+  margin: auto;
+  padding: var(--space-md) 0 var(--space-lg);
+  border-top: var(--border-line);
+}
+
+.list {
+  display: flex;
+}
+
+.listItem {
+  margin: 0 var(--space-sm-md);
+}
+
+.listItem:first-child {
+  margin-left: 0;
+}
+
+.listItem:last-child {
+  margin-right: 0;
+}
+
+.link,
+.link:visited {
+  font-size: var(--fsize-md);
+  color: var(--color-text-body);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-text-heading);
+}
+
+.icon {
+  /* gets rid of extra whitespace below the svg */
+  display: block; 
+
+  color: var(--color-text-body);
+  transition: color var(--trans-timing) var(--trans-ease);
+}
+
+.icon:hover,
+.icon:focus {
+  color: var(--color-text-heading);
+}
+
+.copyright {
+  align-self: center;
+  font-size: var(--fsize-md);
+  color: var(--color-text-body);
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .inner,
+  .list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner > *:not(:last-child),
+  .listItem:not(:last-child) {
+    margin-bottom: var(--space-sm);
+  }
+
+  .listItem {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
