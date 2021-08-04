@@ -19,5 +19,6 @@ function titleCase(str) {
     const remainingLetters = part.slice(1)
     return firstLetterCapitalized + remainingLetters
   })
+  
   return titleCased.join(' ')
 }

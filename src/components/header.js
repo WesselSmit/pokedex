@@ -3,6 +3,7 @@ import useWindowSize from '../hooks/useWindowSize'
 import GithubIcon from '../icons/github'
 import Link from 'next/link'
 import Image from 'next/image'
+import { classNames } from '../utils/classes'
 import styles from '../styles/components/header.module.css'
 
 
@@ -28,10 +29,8 @@ export default function Header() {
     setMenuClickedOpen(!menuClickedOpen)
   }
 
-  // TODO schrijf utils functie om meerdere classNames te kunnen gebruiken (join ze aan elkaar met reduce)
-
   return (
-    <header className={styles.container + ' ' + (activeMenu ? styles.open : styles.closed)}>
+    <header className={ classNames(styles.container, activeMenu ? styles.open : styles.closed)}>
       <div className={styles.inner}>
         <Link href="/">
           <a>
