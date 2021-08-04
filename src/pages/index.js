@@ -97,6 +97,7 @@ export async function getStaticProps() {
     props: {
       data: pokemons,
       next
-    }
+    },
+    revalidate: 86400 // regenerate static page every 24 hours (60 seconds x 60 minutes x 24 hours = 86400 or 1 day)
   }
 }
