@@ -12,6 +12,10 @@
   padding: var(--space-lg) 0 var(--space-md);
 }
 
+.navigation {
+  display: block;
+}
+
 .list {
   display: flex;
 }
@@ -39,7 +43,7 @@
   color: var(--color-text-body);
 }
 
-.icon {
+.githubIcon {
   /* gets rid of extra whitespace below the svg */
   display: block; 
 
@@ -47,7 +51,48 @@
   transition: color var(--trans-timing) var(--trans-ease);
 }
 
-.icon:hover,
-.icon:focus {
+.githubIcon:hover,
+.githubIcon:focus {
   color: var(--color-text-body);
+}
+
+.menuIcon {
+  display: none;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 22px;
+  background-color: var(--color-text-heading);
+  transition: transform var(--trans-timing) var(--trans-ease);
+}
+
+.menuIcon.open::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.menuIcon.open::after {
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.menuIcon.closed::before {
+  transform: translateY(-4px) rotate(0deg)
+}
+
+.menuIcon.closed::after {
+  transform: translateY(4px) rotate(0deg)
+}
+
+
+@media only screen and (max-width: 480px) {
+  .navigation {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+  }
 }
