@@ -13,6 +13,27 @@ export default function About() {
 
       <Header />
 
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+
       <Footer />
     </>
   )
