@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '../components/header'
 import Footer from '../components/footer'
 import styles from '../styles/pages/about.module.css'
 
@@ -10,7 +11,28 @@ export default function About() {
         <title>About | Pokédex</title>
       </Head>
 
-      <h1>About</h1>
+      <Header />
+
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
+      <h1>CONTENT</h1>
 
       <Footer />
     </>

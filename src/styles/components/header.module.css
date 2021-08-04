@@ -1,0 +1,140 @@
+.container {
+  padding: 0 var(--space-md);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--width-site);
+  margin: auto;
+  padding: var(--space-lg) 0 var(--space-md);
+}
+
+.navigation {
+  display: block;
+}
+
+.list {
+  display: flex;
+}
+
+.listItem {
+  margin: 0 var(--space-sm-md);
+}
+
+.listItem:first-child {
+  margin-left: 0;
+}
+
+.listItem:last-child {
+  margin-right: 0;
+}
+
+.link,
+.link:visited {
+  font-size: var(--fsize-md);
+  color: var(--color-text-heading);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-text-body);
+}
+
+.githubIcon {
+  /* gets rid of extra whitespace below the svg */
+  display: block; 
+
+  color: var(--color-text-heading);
+  transition: color var(--trans-timing) var(--trans-ease);
+}
+
+.githubIcon:hover,
+.githubIcon:focus {
+  color: var(--color-text-body);
+}
+
+.menuIcon {
+  display: none;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 22px;
+  background-color: var(--color-text-heading);
+  transition: transform var(--trans-timing) var(--trans-ease);
+}
+
+/* mobile menu open */
+.container.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--layer-overlay);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-background);
+}
+
+.open .inner {
+  position: relative;
+  display: block;
+}
+
+.open .navigation {
+  margin-top: var(--space-md);
+}
+
+.open .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.open .listItem {
+  margin: 0;
+}
+
+.open .listItem:not(:last-child) {
+  margin-bottom: var(--space-sm);
+}
+
+.open .menuIcon {
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+
+.open .menuIcon::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.open .menuIcon::after {
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+/* mobile menu closed (default) */
+.closed .menuIcon::before {
+  transform: translateY(-4px) rotate(0deg)
+}
+
+.closed .menuIcon::after {
+  transform: translateY(4px) rotate(0deg)
+}
+
+
+@media only screen and (max-width: 480px) {
+  .menuIcon {
+    display: block;
+  }
+
+  /* mobile menu closed (default) */
+  .closed .navigation {
+    display: none;
+  }
+}

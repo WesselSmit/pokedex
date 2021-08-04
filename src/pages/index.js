@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
+import Header from '../components/header'
 import Cards from '../components/cards'
 import Footer from '../components/footer'
 import Head from 'next/head'
@@ -53,7 +54,6 @@ export default function Home({ data, next }) {
   // TODO add 'load more' button for when the page isn't loading (this is necessary because if you go back to the overview page from a detail page, then you might be at the bottom of the page but since you didn't scroll the IntersectionObserver did not get triggered)
   // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
 
-  // TODO use <Header />
   // TODO clean up JSX template
 
   return (
@@ -62,15 +62,9 @@ export default function Home({ data, next }) {
         <title>Browse pokemon | Pokédex</title>
       </Head>
 
-      {/* TODO use <Header /> */}
+      <Header />
 
-      {/* <header className={styles.header}>
-        <div className={styles.logo}>
-          <Image src="/logo.png" alt="Pokédex logo" width={434} height={156} />
-        </div> */}
-
-        {/* <Search pokemons={pokemons} setFilteredPokemons={setFilteredPokemons} /> */}
-      {/* </header> */}
+      {/* <Search pokemons={pokemons} setFilteredPokemons={setFilteredPokemons} /> */}
 
       <main className={styles.list}>
         <Cards pokemons={pokemons} />
