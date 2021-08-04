@@ -1,4 +1,5 @@
-/* TODO add font-family + font-size variables */
+/* TODO add font-size variables (media queries) */
+/* TODO use a better naming scheme for colors */
 :root {
   /* colors */
   --color-background: #FFFFFF;
@@ -14,19 +15,21 @@
   --space-sm: 1.5rem;
 
   /* sizes (widths & heights) */
-  --width-site: 140rem;
-  --size-card: 25rem;
+  --width-site: 130rem;
+  --size-card: 22rem;
 
   /* font sizes */
-  --fsize-md: 1.5rem;
+  --fsize-md: 1.4rem;
+  --fsize-sm: 1.2rem;
 
-  /* borders */
-  --border-line: 1px solid var(--color-text-heading);
+  /* font weights */
+  --fweight-bold: 800;
+  --fweight-normal: 400;
+  --fweight-light: 300;
 
   /* stacking layers (z-index) */
   --layer-overlay: 10;
 
   /* transitions */
-  --trans-timing: 200ms;
-  --trans-ease: ease;
+  --trans-basic: 200ms;
 }

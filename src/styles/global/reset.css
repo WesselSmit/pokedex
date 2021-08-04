@@ -28,17 +28,13 @@ dd {
 body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 ul,
 ol {
   padding: 0;
   list-style: none;
-}
-
-article > * + * {
-  margin-top: 1.5rem;
 }
 
 input,

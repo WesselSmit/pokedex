@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className={styles.container}>
       <div className={styles.inner}>
-        <nav>
+        <nav className={styles.navigation}>
           <ul className={styles.list}>
             <li className={styles.listItem}>
               <Link href="/">

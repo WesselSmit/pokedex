@@ -29,8 +29,10 @@ export default function Header() {
     setMenuClickedOpen(!menuClickedOpen)
   }
 
+  // TODO kijk of je de header ook met alleen css kan fixen (zonder de useWindowSize hook)
+
   return (
-    <header className={ classNames(styles.container, activeMenu ? styles.open : styles.closed)}>
+    <header className={ classNames(styles.container, activeMenu ? styles.open : styles.closed) }>
       <div className={styles.inner}>
         <Link href="/">
           <a>
