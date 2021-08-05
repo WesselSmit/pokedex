@@ -1,66 +1,58 @@
-export function typeColor(type) {
-  // TODO use better looking colors + rename function to be more descriptive
-  const colors = { // pokemondb.net (figma image 2)
-    normal: '#AAAA9B',
-    fire: '#EC5435',
-    fighting: '#AE5B4A',
-    water: '#5099F7',
-    flying: '#8A9BF8',
-    grass: '#8BC965',
-    poison: '#9F5B96',
-    electric: '#F8CD55',
-    ground: '#D8BB65',
-    psychic: '#EC6398',
-    rock: '#B8AA6F',
-    ice: '#7FCBFA',
-    bug: '#ADBA44',
-    dragon: '#736AE6',
-    ghost: '#6567B5',
-    dark: '#725647',
-    steel: '#AAAABA',
-    fairy: '#E29EE9'
-  }
-  // const colors = { // figma image 1
-  //   normal: '#EAEADE',
-  //   fire: '#F8B80E',
-  //   fighting: '#D36063',
-  //   water: '#36AFF6',
-  //   flying: '#DCE5EA',
-  //   grass: '#67F70A',
-  //   poison: '#CA72EC',
-  //   electric: '#F7FF85',
-  //   ground: '#EDE293',
-  //   psychic: '#F55792',
-  //   rock: '#94834F',
-  //   ice: '#66D1E5',
-  //   bug: '#D9FE9E',
-  //   dragon: '#D6B1FE',
-  //   ghost: '#BD98CB',
-  //   dark: '#916852',
-  //   steel: '#BBC5C4',
-  //   fairy: '#FDD1E0'
-  // }
-  // const colors = { // sjors
-  //   normal: '#A8A878',
-  //   fire: '#F08030',
-  //   fighting: '#C03028',
-  //   water: '#6890F0',
-  //   flying: '#A890F0',
-  //   grass: '#78C850',
-  //   poison: '#A040A0',
-  //   electric: '#F8D030',
-  //   ground: '#E0C068',
-  //   psychic: '#F85888',
-  //   rock: '#B8A038',
-  //   ice: '#98D8D8',
-  //   bug: '#A8B820',
-  //   dragon: '#7038F8',
-  //   ghost: '#705898',
-  //   dark: '#705848',
-  //   steel: '#B8B8D0',
-  //   fairy: '#EE99AC'
-  // }
-  
+// all pokemon type colors
+const colors = {
+  normal: '#AAAA9B',
+  fire: '#EC5435',
+  fighting: '#AE5B4A',
+  water: '#5099F7',
+  flying: '#8A9BF8',
+  grass: '#8BC965',
+  poison: '#9F5B96',
+  electric: '#F8CD55',
+  ground: '#D8BB65',
+  psychic: '#EC6398',
+  rock: '#B8AA6F',
+  ice: '#7FCBFA',
+  bug: '#ADBA44',
+  dragon: '#736AE6',
+  ghost: '#6567B5',
+  dark: '#725647',
+  steel: '#AAAABA',
+  fairy: '#E29EE9'
+}
 
-  return colors[type]
+
+// get pokemon color
+export function typeColor(pokemon, colorMode = 'hex', alphaValue = 1) {
+  const mainType = pokemon[0].type.name
+  const hexColor = colors[mainType]
+  let color
+
+  switch(colorMode.toLowerCase()) {
+    case 'rgb':
+    case 'rgba':
+      color = `rgba(${HEXtoRGBA(hexColor, alphaValue)})`
+      break
+    default:
+      color = hexColor
+  }
+
+  return color
+}
+
+
+// convert HEX to RGBA (https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb)
+function HEXtoRGBA(hex, a) {
+  const sanitizedHEX = sanitizeHEX(hex)
+  const hexBigInt = parseInt(sanitizedHEX, 16)
+  const r = (hexBigInt >> 16) & 255
+  const g = (hexBigInt >> 8) & 255
+  const b = hexBigInt & 255
+
+  return [r, g, b, a].join()
+}
+
+
+// get rid of the '#' in hex values (e.g. '#FFFFFF' becomes 'FFFFFF')
+function sanitizeHEX(hex) {
+  return hex.slice(1)
 }

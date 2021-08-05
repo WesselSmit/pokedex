@@ -2,8 +2,8 @@
   width: calc(2 * var(--size-card) + 2 * var(--space-sm));
   margin-bottom: var(--space-md);
   padding: 1rem 1.5rem;
-  background-color: var(--color-background);
-  border: 1px solid var(--color-background);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
 }
 
 .input:focus {

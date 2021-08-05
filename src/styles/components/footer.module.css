@@ -1,4 +1,4 @@
-.container {
+.outer {
   padding: var(--space-md) var(--space-md) 0;
 
   /* make sure the footer is always at the bottom of the page even when the page content isn't 100vh high */
@@ -8,11 +8,10 @@
 .inner {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   max-width: var(--width-site);
   margin: auto;
   padding: var(--space-md) 0 var(--space-lg);
-  border-top: 1px solid var(--color-text-heading)
+  border-top: 1px solid var(--color-black)
 }
 
 .navigation {
@@ -39,39 +38,39 @@
 
 .link,
 .link:visited {
-  font-size: var(--fsize-md);
-  color: var(--color-text-heading);
+  font-size: var(--fsize-sm);
+  color: var(--color-black);
 }
 
 .link:hover,
 .link:focus {
-  color: var(--color-text-body);
+  color: var(--color-black-light);
 }
 
 .icon {
   /* gets rid of extra whitespace below the svg */
   display: block; 
 
-  color: var(--color-text-heading);
+  color: var(--color-black);
   transition: color var(--trans-basic);
 }
 
 .icon:hover,
 .icon:focus {
-  color: var(--color-text-body);
+  color: var(--color-black-light);
 }
 
 .copyright {
   align-self: center;
-  font-size: var(--fsize-md);
-  color: var(--color-text-heading);
+  font-size: var(--fsize-sm);
+  color: var(--color-black);
   text-align: center;
 }
 
 
 @media only screen and (max-width: 480px) {
-  .container {
-    padding: 0 var(--space-md);
+  .outer {
+    padding: var(--space-lg) var(--space-md) 0;
   }
 
   .inner,

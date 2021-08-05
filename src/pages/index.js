@@ -61,7 +61,7 @@ export default function Home({ data, next }) {
   }
   
   // initialize infinite scroll 
-  useInfiniteScroll(targetElement, fetchPokemons, { rootMargin: '1000px' })
+  // useInfiniteScroll(targetElement, fetchPokemons, { rootMargin: '1000px' })
 
   // TODO refactor de dubbele fetch logica in een losse function (meer DRY)
 
@@ -70,6 +70,9 @@ export default function Home({ data, next }) {
   // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
 
   // TODO clean up JSX template
+
+  // TODO about page content maken
+  // TODO 404 page maken
 
   return (
     <>

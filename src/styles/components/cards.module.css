@@ -2,25 +2,58 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: var(--width-site);
+  /* ' + (2 * var(--space-sm))' is necessary to compensate for the horizontal margin around the first + last card of each row */
+  /* ideally we would use flex-gap instead of margin, but this isn't supported in safari at the moment */ 
+  /* we also cannot detect browser support for flex-gap due to a bug (https://stackoverflow.com/questions/55387748/how-to-check-for-gap-support-in-flexbox-layout) */
+  max-width: calc(var(--width-site) + (2 * var(--space-sm)));
   margin: auto;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: var(--size-card);
   height: var(--size-card);
   margin: var(--space-sm);
-  padding: 1rem;
-  /* add skeleton UI/background for users with slow internet */
-  border: 1px solid transparent;
-  border-radius: 1rem;
+  padding: var(--space-xsm) var(--space-xsm) .5rem;
+  border: 2px solid transparent;
+}
+
+.card:hover,
+.card:focus {
+  /* TODO gebruik goede border kleur */
+  border: 2px solid red;
+}
+
+.textOuter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.textInner {
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
-  text-align: center;
-  font-size: 1.5rem;
-  color: var(--color-text-heading);
+  margin-bottom: 1px;
+  font-size: 1.6rem;
+  line-height: .9;
+  text-transform: uppercase;
+}
+
+.japanese {
+  font-size: var(--fsize-xsm);
+  font-weight: var(--fweight-light);
+  line-height: 1.5;
+}
+
+.id {
+  font-size: 3.2rem;
+  font-weight: var(--fweight-light);
+  line-height: .8;
 }

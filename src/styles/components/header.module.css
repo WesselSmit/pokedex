@@ -1,4 +1,5 @@
-.container {
+.outer {
+  margin-bottom: var(--space-md);
   padding: 0 var(--space-md);
 }
 
@@ -6,10 +7,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   max-width: var(--width-site);
   margin: auto;
-  padding: var(--space-lg) 0 var(--space-md);
+  padding: var(--space-lg) 0 0;
 }
 
 .navigation {
@@ -35,26 +35,26 @@
 
 .link,
 .link:visited {
-  font-size: var(--fsize-md);
-  color: var(--color-text-heading);
+  font-size: var(--fsize-sm);
+  color: var(--color-black);
 }
 
 .link:hover,
 .link:focus {
-  color: var(--color-text-body);
+  color: var(--color-black-light);
 }
 
 .githubIcon {
   /* gets rid of extra whitespace below the svg */
   display: block; 
 
-  color: var(--color-text-heading);
+  color: var(--color-black);
   transition: color var(--trans-basic);
 }
 
 .githubIcon:hover,
 .githubIcon:focus {
-  color: var(--color-text-body);
+  color: var(--color-black-light);
 }
 
 .menuIcon {
@@ -67,19 +67,19 @@
   display: block;
   height: 1px;
   width: 22px;
-  background-color: var(--color-text-heading);
+  background-color: var(--color-black);
   transition: transform var(--trans-basic);
 }
 
 /* mobile menu open */
-.container.open {
+.outer.open {
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--layer-overlay);
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-background);
+  background-color: var(--color-white);
 }
 
 .open .inner {
@@ -87,7 +87,7 @@
   display: block;
 }
 
-.open .navigation {
+.open.outer .navigation {
   margin-top: var(--space-md);
 }
 
