@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import GithubIcon from '../icons/github'
+import GithubIcon from '../assets/github'
 import Link from 'next/link'
 import Image from 'next/image'
 import { classNames } from '../utils/classes'
@@ -60,6 +60,7 @@ export default function Header() {
             </li>
             <li className={styles.listItem}>
               <a href="https://github.com/WesselSmit/pokedex" target="_blank" rel="noreferrer">
+                <p className={ classNames(styles.link, styles.githubLink) }>Github</p>
                 <GithubIcon className={styles.githubIcon} />
               </a>
             </li>

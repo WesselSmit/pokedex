@@ -57,6 +57,10 @@
   color: var(--color-black-light);
 }
 
+.githubLink {
+  display: none;
+}
+
 .menuIcon {
   display: none;
 }
@@ -94,7 +98,8 @@
 .open .list {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: var(--space-md-lg);
 }
 
 .open .listItem {
@@ -102,7 +107,19 @@
 }
 
 .open .listItem:not(:last-child) {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.open .link {
+  font-size: var(--fsize-md);
+}
+
+.open .githubIcon {
+  display: none;
+}
+
+.open .githubLink {
+  display: block;
 }
 
 .open .menuIcon {
