@@ -19,6 +19,7 @@
   margin: var(--space-sm);
   padding: var(--space-xsm) var(--space-xsm) .5rem;
   border: 2px solid transparent;
+  border-radius: var(--border-radius);
 }
 
 .card:hover,

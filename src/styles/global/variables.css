@@ -1,11 +1,10 @@
-/* TODO add font-size variables (media queries) */
 :root {
   /* colors */
   /* '-light' colors are 60% opacity of their base color */
   --color-white: #FFFFFF;
   --color-blue: #0076ff;
   --color-blue-light: #66ADFF;
-  --color-black: #000000;
+  --color-black: #111111;
   --color-black-light: #666666;
 
   /* spaces (margins & paddings) */
@@ -35,6 +34,9 @@
   /* stacking layers (z-index) */
   --layer-overlay: 10;
 
+  /* borders */
+  --border-radius: 5px;
+
   /* transitions */
-  --trans-basic: 200ms;
+  --trans-basic: 200ms ease;
 }

@@ -2,23 +2,43 @@ import { useState } from 'react'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
 import Header from '../components/header'
 import Cards from '../components/cards'
+import Loader from '../components/loader'
 import Footer from '../components/footer'
 import Head from 'next/head'
 import styles from '../styles/pages/home.module.css'
+
+// TODO gebruik catch/try in fetchPokemons() + check of de catch/try in getPokemons() goed werkt + handle error state in UI
+// TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
+// TODO 404 page maken
 
 
 export default function Home({ data, next }) {
   let nextFetchLink = next
   const [pokemons, setPokemons] = useState(data)
-  // const [filteredPokemons, setFilteredPokemons] = useState(pokemons)
+  const [isFetching, setIsFetching] = useState(false)
   const [targetElement, setTargetElement] = useState(null)
 
-  const getPokemons = async () => {
+  /*
+    TODO
+    De huidige website werkt op 1 ding na:
+    Wanneer de rootMargin op 100000px staat (een afstand die de gebruiker niet kan scrollen) krijgt de gebruiker een 'load more' button te zien.
+    
+    Het fetchen van de nieuwe pokemons gaat echter niet goed wanneer de gebruiker op de 'load more' button klikt; de eerste keer gaat het goed en worden pokemons 40-80 gefetched + displayed. Als de gebruiker dan weer naar beneden scrollt en op de button klikt dan worden OPNIEUW pokemons 40-80 gefetched. 
+    
+    De nextFetchLink update dus niet goed met de 'load more' button maar werkt wel goed met de infinite scroll.
+
+    Dit is hetzelfde probleem als je al eerder had met state die niet geupdate lijkt te worden, dit heeft te maken met clojures (zie ook https://stackoverflow.com/questions/54069253/usestate-set-method-not-reflecting-change-immediately).
+    Het antwoord betekent is waarschijnlijk iets met useEffect.
+  */
+
+  async function getPokemons() {
     try {
       // stop if all pokemons are fetched
       if (!nextFetchLink) {
         return 
       }
+
+      setIsFetching(true)
 
       const { pokemons: fetchedPokemons, next } = await fetchPokemons(nextFetchLink)
 
@@ -31,22 +51,16 @@ export default function Home({ data, next }) {
       // filter out all non original (variant) pokemons
       const originalPokemons = fetchedPokemons.filter(pokemon => pokemon.id < 10000)
 
-      setPokemons(pokemons => [...pokemons, ...originalPokemons])
+      await setPokemons(pokemons => [...pokemons, ...originalPokemons])
+      setIsFetching(false)
     } catch (err) {
       console.error('Could not fetch new pokémons: ', err)
     }
   }
   
+
   // initialize infinite scroll (use 'rootMargin: 1000px' to start fetching new data before users see the end of screen)
   useInfiniteScroll(targetElement, getPokemons, { rootMargin: '1000px' })
-
-  // TODO add loading state
-  // TODO add 'load more' button for when the page isn't loading (this is necessary because if you go back to the overview page from a detail page, then you might be at the bottom of the page but since you didn't scroll the IntersectionObserver did not get triggered)
-  // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
-
-  // TODO clean up JSX template
-
-  // TODO 404 page maken
 
   return (
     <>
@@ -56,14 +70,13 @@ export default function Home({ data, next }) {
 
       <Header />
 
-      {/* <Search pokemons={pokemons} setFilteredPokemons={setFilteredPokemons} /> */}
-
       <main className={styles.list}>
         <Cards pokemons={pokemons} />
-        {/* <Cards pokemons={filteredPokemons} /> */}
       </main>
 
-      <div ref={setTargetElement}>TARGET</div>
+      <div ref={setTargetElement}>
+        <Loader isLoading={isFetching} getPokemons={getPokemons} />
+      </div>
 
       <Footer />
     </>
