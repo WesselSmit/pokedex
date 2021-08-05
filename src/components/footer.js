@@ -1,5 +1,6 @@
-import GithubIcon from '../icons/github'
+import GithubIcon from '../assets/github'
 import Link from 'next/link'
+import { classNames } from '../utils/classes'
 import styles from '../styles/components/footer.module.css'
 
 
@@ -25,6 +26,7 @@ export default function Footer() {
         </nav>
 
         <a href="https://github.com/WesselSmit/pokedex" target="_blank" rel="noreferrer">
+          <p className={ classNames(styles.link, styles.githubLink) }>Github</p>
           <GithubIcon className={styles.icon} />
         </a>
 
