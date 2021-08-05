@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { typeColor } from '../utils/colors'
-import { displayName } from '../utils/names'
+import { displayName, displayId } from '../utils/display'
 import styles from '../styles/components/cards.module.css'
 
 // TODO zoek een nette manier om de kleuren dynamisch te houden (:hover en :focus moeten ook stylebaar zijn)
@@ -17,8 +17,6 @@ export default function Card({ pokemons }) {
 
         const japNameObj = names.find(nameObj => nameObj.language.name === 'ja')
         const japName = japNameObj.name
-
-        const displayId = id.toString().padStart(3, '0')
 
         return (
           <li key={name}>
@@ -44,7 +42,7 @@ export default function Card({ pokemons }) {
                     <p className={styles.japanese} style={{color: typeColor(types)}}>{japName}</p>
                   </div>
 
-                  <p className={styles.id} style={{color: typeColor(types)}}>{displayId}</p>
+                  <p className={styles.id} style={{color: typeColor(types)}}>{displayId(id)}</p>
                 </article>
               </a>
             </Link>

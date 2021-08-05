@@ -1,16 +1,18 @@
 import Head from 'next/head'
-import { displayName } from '../utils/names'
+import { displayName } from '../utils/display'
 import styles from '../styles/pages/pokemon.module.css'
 
 
 export default function Pokemon({ pokemon }) {
+  const { id, name } = pokemon
+
   return (
     <>
       <Head>
-        <title>{displayName(pokemon.name)} | Pokédex</title>
+        <title>{id} {displayName(name)} | Pokédex</title>
       </Head>
 
-      <h1>{displayName(pokemon.name)}</h1>
+      <h1>{displayName(name)}</h1>
     </>
   )
 }

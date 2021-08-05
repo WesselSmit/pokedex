@@ -1,4 +1,14 @@
-// format pokemon names to be displayed
+// utility functions used to format content for display
+
+
+// format pokemon id's
+export function displayId(id, length = 3, char = '0') {
+  const stringId = id.toString()
+  return stringId.padStart(length, char.toString())
+}
+
+
+// format pokemon names
 export function displayName(name) {
   const nameWithSpaces = replaceHyphens(name)
   return titleCase(nameWithSpaces)
