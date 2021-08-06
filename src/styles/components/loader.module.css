@@ -10,9 +10,8 @@
 .button {
   height: var(--height-button);
   padding: 0 var(--space-sm);
-  background-color: var(--color-blue);
   color: var(--color-white);
-  border: 2px solid var(--color-blue);
+  border: 2px solid;
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all var(--trans-basic);
@@ -21,5 +20,24 @@
 .button:hover,
 .button:focus {
   background-color: var(--color-white);
+}
+
+.error {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.error:hover,
+.error:focus {
+  color: var(--color-red);
+}
+
+.load {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.load:hover,
+.load:focus {
   color: var(--color-blue);
 }

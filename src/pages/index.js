@@ -7,7 +7,6 @@ import Footer from '../components/footer'
 import Head from 'next/head'
 import styles from '../styles/pages/home.module.css'
 
-// TODO gebruik catch/try in fetchPokemons() + check of de catch/try in getPokemons() goed werkt + handle error state in UI + update isFetching state als het fetchen mislukt (nu oneindige load animatie)
 // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
 // TODO 404 page maken
 
@@ -16,6 +15,7 @@ export default function Home({ data, next }) {
   const [fetchIndex, setFetchIndex] = useState(0)
   const [pokemons, setPokemons] = useState(data)
   const [isFetching, setIsFetching] = useState(false)
+  const [isError, setIsError] = useState(false)
   const [targetElement, setTargetElement] = useState(null)
 
   function incrementFetchIndex() {
@@ -36,8 +36,6 @@ export default function Home({ data, next }) {
 
       const { pokemons: fetchedPokemons, next } = await fetchPokemons(nextFetchLink)
 
-      setNextFetchLink(next)
-
       // the api contains original pokemons and pokemon 'variants'
       // all 'original' pokemons have an id of lower than 10000
       // all 'variant' pokemons have an id higher than 10000 
@@ -46,9 +44,13 @@ export default function Home({ data, next }) {
       const originalPokemons = fetchedPokemons.filter(pokemon => pokemon.id < 10000)
 
       setPokemons(pokemons => [...pokemons, ...originalPokemons])
+      setNextFetchLink(next)
       setIsFetching(false)
+      setIsError(false)
     } catch (err) {
-      console.error('Could not fetch new pokémons: ', err)
+      setIsFetching(false)
+      setIsError(true)
+      console.error('Failed to fetch pokémons.', err)
     }
   }
 
@@ -68,7 +70,7 @@ export default function Home({ data, next }) {
       </main>
 
       <div ref={setTargetElement}>
-        <Loader isLoading={isFetching} incrementFetchIndex={incrementFetchIndex} />
+        <Loader isLoading={isFetching} isError={isError} incrementFetchIndex={incrementFetchIndex} />
       </div>
 
       <Footer />
