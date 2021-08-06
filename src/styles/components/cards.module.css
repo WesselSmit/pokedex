@@ -42,12 +42,12 @@
 
 .name {
   margin-bottom: 1px;
-  font-size: 1.6rem;
+  font-size: var(--fsize-md);
   line-height: .9;
   text-transform: uppercase;
 }
 
-.japanese {
+.japaneseName {
   font-size: var(--fsize-xsm);
   font-weight: var(--fweight-light);
   line-height: 1.5;
