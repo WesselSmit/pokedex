@@ -103,11 +103,7 @@
 }
 
 .open .listItem {
-  margin: 0;
-}
-
-.open .listItem:not(:last-child) {
-  margin-bottom: var(--space-md);
+  margin: 0 0 var(--space-md) 0;
 }
 
 .open .link {

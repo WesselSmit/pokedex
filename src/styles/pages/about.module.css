@@ -21,7 +21,7 @@
   font-size: var(--fsize-md);
 }
 
-.heading:not(:last-of-type) + .text {
+.text {
   margin-bottom: var(--space-md-lg);
 }
 
@@ -40,6 +40,5 @@
 @media only screen and (min-width: 768px) {
   .title {
     margin: var(--space-md) 0 var(--space-md-lg);
-    /* margin: var(--space-md) 0; */
   }
 }

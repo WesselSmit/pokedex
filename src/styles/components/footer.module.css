@@ -1,5 +1,5 @@
 .outer {
-  padding: var(--space-md) var(--space-md) 0;
+  padding: 0 var(--space-md);
 
   /* make sure the footer is always at the bottom of the page even when the page content isn't 100vh high */
   margin-top: auto;
@@ -74,7 +74,7 @@
 
 @media only screen and (max-width: 480px) {
   .outer {
-    padding: var(--space-lg) var(--space-md) 0;
+    padding: 0 var(--space-md);
   }
 
   .inner {
