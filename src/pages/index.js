@@ -36,6 +36,9 @@ export default function Home({ data, next }) {
 
       const { pokemons: fetchedPokemons, next } = await fetchPokemons(nextFetchLink)
 
+      // add property to identify if pokemon is fetched (../components/cards uses this to preload images above the fold)
+      fetchedPokemons.forEach(pokemon => pokemon.isFetched = true)
+
       // the api contains original pokemons and pokemon 'variants'
       // all 'original' pokemons have an id of lower than 10000
       // all 'variant' pokemons have an id higher than 10000 

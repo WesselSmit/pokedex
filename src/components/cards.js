@@ -13,7 +13,7 @@ export default function Card({ pokemons }) {
   return (
     <ul className={styles.list}>
       {pokemons.map(pokemon => {
-        const { name, types, sprites, names, id } = pokemon
+        const { name, types, sprites, names, id, isFetched = false } = pokemon
         const { name: japName } = names.find(nameObj => nameObj.language.name === 'ja')
 
         return (
@@ -28,6 +28,7 @@ export default function Card({ pokemons }) {
                   alt={name} 
                   width={150} 
                   height={150}
+                  priority={!isFetched}
                 />
 
                 {/* TODO use the 'pokemon.species.name' property instead of the 'pokemon.name' (check if this property always exists + if there are multiple names for some pokemons) */}
