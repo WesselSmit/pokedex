@@ -7,7 +7,6 @@ import Footer from '../components/footer'
 import Head from 'next/head'
 import styles from '../styles/pages/home.module.css'
 
-// TODO loadmore button en loader.js .outer element moeten dezelfde hoogte hebben om te voorkomen dat de layout versprint wanneer de gebruiker op 'load more' klikt en de kleinere pokeball verschijnt
 // TODO gebruik catch/try in fetchPokemons() + check of de catch/try in getPokemons() goed werkt + handle error state in UI + update isFetching state als het fetchen mislukt (nu oneindige load animatie)
 // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
 // TODO 404 page maken

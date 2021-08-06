@@ -6,7 +6,7 @@ export default function Loader({ isLoading, incrementFetchIndex }) {
   return (
     <div className={styles.outer}>
       { isLoading ?
-        <Pokeball />
+        <Pokeball className={styles.icon} />
         :
         // fallback for if an unexpected error occurs with the IntersectionObserver
         // examples of unexpected IntersectionObserver errors:
