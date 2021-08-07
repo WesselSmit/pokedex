@@ -41,6 +41,7 @@ export default function Header() {
               alt="Pokédex logo" 
               width={150} 
               height={54} 
+              priority={true}
               className={styles.logo} 
             />
           </a>
