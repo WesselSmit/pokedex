@@ -8,7 +8,6 @@ import Head from 'next/head'
 import styles from '../styles/pages/home.module.css'
 
 // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
-// TODO 404 page maken
 
 export default function Home({ data, next }) {
   const [nextFetchLink, setNextFetchLink] = useState(next)
@@ -63,7 +62,7 @@ export default function Home({ data, next }) {
   return (
     <>
       <Head>
-        <title>Browse pokemon | Pokédex</title>
+        <title>Pokédex</title>
       </Head>
 
       <Header />

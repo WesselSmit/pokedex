@@ -11,10 +11,11 @@ body {
 }
 
 #__next {
-  /* make sure the footer is always at the bottom of the page even when the page content isn't 100vh high */
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
+  /* make sure the footer is always at the bottom of the page even when the page content isn't 100vh high */
+  min-height: 100vh;
 }
 
 h1,

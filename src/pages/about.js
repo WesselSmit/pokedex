@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About | Pokédex</title>
+        <title>About - Pokédex</title>
       </Head>
 
       <Header />

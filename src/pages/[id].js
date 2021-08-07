@@ -9,7 +9,7 @@ export default function Pokemon({ pokemon }) {
   return (
     <>
       <Head>
-        <title>{id} {displayName(name)} | Pokédex</title>
+        <title>{id} {displayName(name)} - Pokédex</title>
       </Head>
 
       <h1>{displayName(name)}</h1>
