@@ -7,6 +7,7 @@ import Footer from '../components/footer'
 import Head from 'next/head'
 import styles from '../styles/pages/home.module.css'
 
+// TODO voeg een "skip pokemons" button (dit is goed voor accessibility omdat users anders door 898 items moeten tabben)
 // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
 // TODO readme
 

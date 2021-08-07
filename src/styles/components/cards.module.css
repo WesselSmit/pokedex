@@ -18,14 +18,14 @@
   height: var(--size-card);
   margin: var(--space-sm);
   padding: var(--space-xsm) var(--space-xsm) .5rem;
+  background-color: rgba(var(--type-color), .3);
   border: 2px solid transparent;
   border-radius: var(--border-radius);
 }
 
 .card:hover,
 .card:focus {
-  /* TODO gebruik goede border kleur */
-  border: 2px solid red;
+  border-color: rgb(var(--type-color));
 }
 
 .textOuter {
@@ -42,18 +42,21 @@
 
 .name {
   margin-bottom: 1px;
+  color: rgb(var(--type-color));
   font-size: var(--fsize-md);
   line-height: .9;
   text-transform: uppercase;
 }
 
 .japaneseName {
+  color: rgb(var(--type-color));
   font-size: var(--fsize-xsm);
   font-weight: var(--fweight-light);
   line-height: 1.5;
 }
 
 .id {
+  color: rgb(var(--type-color));
   font-size: 3.2rem;
   font-weight: var(--fweight-light);
   line-height: .8;

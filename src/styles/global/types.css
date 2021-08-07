@@ -1,0 +1,72 @@
+/* store pokemon type color in a global custom property */
+[type="normal"] {
+  --type-color: var(--color-type-normal);
+}
+
+[type="fire"] {
+  --type-color: var(--color-type-fire);
+}
+
+[type="fighting"] {
+  --type-color: var(--color-type-fighting);
+}
+
+[type="water"] {
+  --type-color: var(--color-type-water);
+}
+
+[type="flying"] {
+  --type-color: var(--color-type-flying);
+}
+
+[type="grass"] {
+  --type-color: var(--color-type-grass);
+}
+
+[type="poison"] {
+  --type-color: var(--color-type-poison);
+}
+
+[type="electric"] {
+  --type-color: var(--color-type-electric);
+}
+
+[type="ground"] {
+  --type-color: var(--color-type-ground);
+}
+
+[type="psychic"] {
+  --type-color: var(--color-type-psychic);
+}
+
+[type="rock"] {
+  --type-color: var(--color-type-rock);
+}
+
+[type="ice"] {
+  --type-color: var(--color-type-ice);
+}
+
+[type="bug"] {
+  --type-color: var(--color-type-bug);
+}
+
+[type="dragon"] {
+  --type-color: var(--color-type-dragon);
+}
+
+[type="ghost"] {
+  --type-color: var(--color-type-ghost);
+}
+
+[type="dark"] {
+  --type-color: var(--color-type-dark);
+}
+
+[type="steel"] {
+  --type-color: var(--color-type-steel);
+}
+
+[type="fairy"] {
+  --type-color: var(--color-type-fairy);
+}
