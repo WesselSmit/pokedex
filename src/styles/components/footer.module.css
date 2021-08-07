@@ -44,7 +44,7 @@
 
 .link:hover,
 .link:focus {
-  color: var(--color-black-light);
+  color: var(--color-gray);
 }
 
 .githubLink {
@@ -62,7 +62,7 @@
 
 .icon:hover,
 .icon:focus {
-  color: var(--color-black-light);
+  color: var(--color-gray);
 }
 
 .copyright {
