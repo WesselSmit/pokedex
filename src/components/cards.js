@@ -25,8 +25,10 @@ export default function Card({ pokemons }) {
                   width={150} 
                   height={150}
                   priority={!isFetched}
+                  className={styles.image}
                 />
 
+                {/* TODO nidoan (029 & 032) hebben een M en F versie, kijk of het gender in de data aangegeven staat -> als deze data erin staat dan kan het gender misschien uit de naam gehaald worden en '(female)' of '(male)' toegevoegd worden ipv 'F' of 'M' of miss zelf wel een icoon ipv een woord */}
                 {/* TODO use the 'pokemon.species.name' property instead of the 'pokemon.name' (check if this property always exists + if there are multiple names for some pokemons) */}
                 <article className={styles.textOuter}>
                   <div className={styles.textInner}>
