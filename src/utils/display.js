@@ -31,11 +31,9 @@ function formatGender(name) {
 
   switch (lastTwoChar) {
     case ' f':
-      console.log(name)
       baseName = name.split(' f')[0]
       return `${baseName} ${femaleUnicode}`
     case ' m':
-      console.log(name)
       baseName = name.split(' m')[0]
       return `${baseName} ${maleUnicode}`
     default:

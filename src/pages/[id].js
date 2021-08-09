@@ -18,11 +18,11 @@ export default function Pokemon({ pokemon }) {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ params }) {
   let data
 
   try {
-    const res = await fetch('https://pokeapi.co/api/v2/pokemon/' + context.params.id)
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon/' + params.id)
     data = await res.json()
   } catch (err) {
     console.error('Failed to fetch pokémon data.', err)
