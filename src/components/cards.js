@@ -15,7 +15,7 @@ export default function Card({ pokemons }) {
         const { name: japName } = names.find(nameObj => nameObj.language.name === 'ja')
         
         return (
-          // the type attribute is used in the css files
+          // the type attribute is used in the css files (see ../styles/global/types.css)
           <li key={name} type={mainType} className={isFetched ? styles.item : null}>
             <Link href={'/' + id}>
               <a className={styles.card}>
@@ -28,8 +28,6 @@ export default function Card({ pokemons }) {
                   className={styles.image}
                 />
 
-                {/* TODO nidoan (029 & 032) hebben een M en F versie, kijk of het gender in de data aangegeven staat -> als deze data erin staat dan kan het gender misschien uit de naam gehaald worden en '(female)' of '(male)' toegevoegd worden ipv 'F' of 'M' of miss zelf wel een icoon ipv een woord */}
-                {/* TODO use the 'pokemon.species.name' property instead of the 'pokemon.name' (check if this property always exists + if there are multiple names for some pokemons) */}
                 <article className={styles.textOuter}>
                   <div className={styles.textInner}>
                     <h6 className={styles.name}>{displayName(name)}</h6>
