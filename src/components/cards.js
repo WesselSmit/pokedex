@@ -16,7 +16,7 @@ export default function Card({ pokemons }) {
         
         return (
           // the type attribute is used in the css files
-          <li key={name} type={mainType}>
+          <li key={name} type={mainType} className={isFetched ? styles.item : null}>
             <Link href={'/' + id}>
               <a className={styles.card}>
                 <Image 

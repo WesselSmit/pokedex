@@ -60,4 +60,5 @@
 
   /* transitions */
   --trans-basic: 200ms ease;
+  --trans-fast: 200ms cubic-bezier(.15, 1.05, 0, .88);
 }

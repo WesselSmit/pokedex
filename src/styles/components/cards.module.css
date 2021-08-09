@@ -9,6 +9,10 @@
   margin: auto;
 }
 
+.item {
+  animation: slide var(--trans-fast);
+}
+
 .card {
   overflow: hidden;
   position: relative;
@@ -42,7 +46,7 @@
   height: 100%;
   background-color: rgba(var(--type-color), .2);
   opacity: 0;
-  transition: all 200ms cubic-bezier(.15, 1.05, 0, .88);
+  transition: all var(--trans-fast);
 }
 
 .card:hover::before, 
@@ -89,4 +93,12 @@
   font-size: 3.2rem;
   font-weight: var(--fweight-light);
   line-height: .8;
+}
+
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
 }
