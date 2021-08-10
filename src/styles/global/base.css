@@ -1,5 +1,5 @@
 html {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--ffamily-base);
 
   /* reset default font-size to 10px for easier calculations (62.5% of 16px [browser default] = 10px) */
   font-size: 62.5%;

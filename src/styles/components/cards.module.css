@@ -1,3 +1,7 @@
+.outer {
+  padding: 0 var(--space-md);
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
