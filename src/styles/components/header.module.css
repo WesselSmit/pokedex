@@ -75,72 +75,6 @@
   transition: transform var(--trans-basic);
 }
 
-/* mobile menu open */
-.outer.open {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: var(--layer-overlay);
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--color-white);
-}
-
-.open .inner {
-  position: relative;
-  display: block;
-}
-
-.open.outer .navigation {
-  margin-top: var(--space-md);
-}
-
-.open .list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: var(--space-md-lg);
-}
-
-.open .listItem {
-  margin: 0 0 var(--space-md) 0;
-}
-
-.open .link {
-  font-size: var(--fsize-md);
-}
-
-.open .githubIcon {
-  display: none;
-}
-
-.open .githubLink {
-  display: block;
-}
-
-.open .menuIcon {
-  position: absolute;
-  top: 80px;
-  right: 0;
-}
-
-.open .menuIcon::before {
-  transform: translateY(0) rotate(45deg);
-}
-
-.open .menuIcon::after {
-  transform: translateY(-1px) rotate(-45deg);
-}
-
-/* mobile menu closed (default) */
-.closed .menuIcon::before {
-  transform: translateY(-4px) rotate(0deg)
-}
-
-.closed .menuIcon::after {
-  transform: translateY(4px) rotate(0deg)
-}
-
 
 @media only screen and (max-width: 480px) {
   .menuIcon {
@@ -150,5 +84,70 @@
   /* mobile menu closed (default) */
   .closed .navigation {
     display: none;
+  }
+
+  .closed .menuIcon::before {
+    transform: translateY(-4px) rotate(0deg)
+  }
+
+  .closed .menuIcon::after {
+    transform: translateY(4px) rotate(0deg)
+  }
+
+  /* mobile menu open */
+  .outer.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--layer-overlay);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-white);
+  }
+
+  .open .inner {
+    position: relative;
+    display: block;
+  }
+
+  .open.outer .navigation {
+    margin-top: var(--space-md);
+  }
+
+  .open .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: var(--space-md-lg);
+  }
+
+  .open .listItem {
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .open .link {
+    font-size: var(--fsize-md);
+  }
+
+  .open .githubIcon {
+    display: none;
+  }
+
+  .open .githubLink {
+    display: block;
+  }
+
+  .open .menuIcon {
+    position: absolute;
+    top: 80px;
+    right: 0;
+  }
+
+  .open .menuIcon::before {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .open .menuIcon::after {
+    transform: translateY(-1px) rotate(-45deg);
   }
 }

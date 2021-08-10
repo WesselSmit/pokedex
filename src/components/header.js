@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import useWindowSize from '../hooks/useWindowSize'
+import { useState } from 'react'
 import GithubIcon from '../assets/github'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -8,31 +7,14 @@ import styles from '../styles/components/header.module.css'
 
 
 export default function Header() {
-  const [activeMenu, setActiveMenu] = useState(false)
-  const [menuClickedOpen, setMenuClickedOpen] = useState(false)
-  const { width: screenWidth } = useWindowSize()
-
-  // '480' is the same width as in the header.module.css media query
-  const isMobileScreenSize = screenWidth <= 480 
-
-  useEffect(() => {
-    // if menu is open and screen resizes to non-mobile screen (devtools), automatically close the menu
-    if (!isMobileScreenSize && activeMenu) {
-      setMenuClickedOpen(false)
-    }
-
-    // if device is a phone (isMobileScreenSize) and user opened the menu (menuClickedOpen), the menu should be open
-    setActiveMenu(isMobileScreenSize && menuClickedOpen)
-  }, [isMobileScreenSize, menuClickedOpen])
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   function handleClick() {
-    setMenuClickedOpen(!menuClickedOpen)
+    setMenuIsOpen(!menuIsOpen)
   }
 
-  // TODO kijk of je de header ook met alleen css kan fixen (zonder de useWindowSize hook)
-
   return (
-    <header className={ classNames(styles.outer, activeMenu ? styles.open : styles.closed) }>
+    <header className={ classNames(styles.outer, menuIsOpen ? styles.open : styles.closed) }>
       <div className={styles.inner}>
         <Link href="/">
           <a>
@@ -41,7 +23,7 @@ export default function Header() {
               alt="Pokédex logo" 
               width={150} 
               height={54} 
-              priority={true}
+              priority="true"
               className={styles.logo} 
             />
           </a>
