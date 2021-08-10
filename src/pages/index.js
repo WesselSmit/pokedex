@@ -9,6 +9,7 @@ import styles from '../styles/pages/home.module.css'
 
 // TODO wanneer users verder dan pokemon 898 en een nieuwe fetch triggeren -> gebruikers zien kort de loading animation en dan meteen weer de 'load more' button maar omdat er geen nieuwe pokemons gefetched worden ziet het er raar uit (miss kan je hier iets op bedenken; bijv. de fetch button/hook weghalen/stoppen als ze op dit punt komen (alle varianten zijn toch altijd als laatste wegens hun index over 10.000))
 // TODO voeg een "skip pokemons" button (dit is goed voor accessibility omdat users anders door 898 items moeten tabben) + eventueel extra "skip pokemons" buttons inserten elke keer dat er een nieuwe lading pokemons word gefetched (op deze manier kunnen gebruikers ook halverwege/tijdens de infinite-scroll skippen)
+// TODO search function
 // TODO add caching for images using a serviceWorker to speed up image load times (check if it's actually faster)
 // TODO readme
 
