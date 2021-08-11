@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { displayName, displayId } from '../utils/display'
 import styles from '../styles/components/cards.module.css'
 
-// TODO check responsiveness (zie ook TODO in JSX)
+// TODO maak responsive
 
 export default function Card({ pokemons }) {
   return (
@@ -17,7 +17,7 @@ export default function Card({ pokemons }) {
           
           return (
             // the type attribute is used in the css files (see ../styles/global/types.css)
-            <li key={name} type={mainType} className={isFetched ? styles.item : null}>
+            <li key={id} type={mainType} className={isFetched ? styles.item : null}>
               <Link href={'/' + id}>
                 <a className={styles.card}>
                   <Image 

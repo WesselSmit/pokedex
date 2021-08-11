@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import GithubIcon from '../assets/github'
+import GithubIcon from '../assets/githubIcon'
 import Link from 'next/link'
 import Image from 'next/image'
 import { classNames } from '../utils/classes'

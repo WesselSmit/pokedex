@@ -87,11 +87,11 @@
   }
 
   .closed .menuIcon::before {
-    transform: translateY(-4px) rotate(0deg)
+    transform: translateY(-4px) rotate(0deg);
   }
 
   .closed .menuIcon::after {
-    transform: translateY(4px) rotate(0deg)
+    transform: translateY(4px) rotate(0deg);
   }
 
   /* mobile menu open */
