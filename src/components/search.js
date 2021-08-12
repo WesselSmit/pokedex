@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import SearchIcon from '../assets/searchIcon'
+import { fetchDetailsForPokemons, filterVariants } from '../utils/pokemons'
 import styles from '../styles/components/search.module.css'
 
-// TODO search function implementeren
 
-export default function Search() {
+export default function Search({ pokemons, setFilteredPokemons }) {
   const [inputElement, setInputElement] = useState(null)
 
   useEffect(() => {
@@ -17,8 +17,33 @@ export default function Search() {
     inputElement.focus()
   }
 
+  async function filter() {
+    const input = inputElement.value.trim()
+    const isNum = !isNaN(input)
+
+    if (!input) {
+      setFilteredPokemons(pokemons)
+      return
+    }
+
+    const matchingPokemons = pokemons.filter(pokemon => {
+      if (isNum) {
+        return pokemon.id === input
+      } else {
+        return pokemon.name.includes(input)
+      }
+    })
+
+    const filteredPokemons = await fetchDetailsForPokemons(matchingPokemons)
+
+    const filteredOriginalPokemons = filterVariants(filteredPokemons)
+
+    setFilteredPokemons(filteredOriginalPokemons)
+  }
+
   function reset() {
     inputElement.value = ''
+    filter()
     focus()
   }
 
@@ -30,7 +55,7 @@ export default function Search() {
             <SearchIcon className={styles.icon} />
           </label>
 
-          <input type="text" id="search" placeholder="Search by name or id" maxLength="15" autoComplete="off" spellCheck="false" ref={setInputElement} className={styles.input} />
+          <input type="text" id="search" placeholder="Search by name or id" maxLength="15" autoComplete="off" spellCheck="false" ref={setInputElement} onChange={filter} className={styles.input} />
           <button onClick={reset} className={styles.reset}></button>
         </div>
       </div>
