@@ -1,4 +1,4 @@
-import Pokeball from '../components/pokeball'
+import Pokeball from '../assets/pokeball'
 import { classNames } from '../utils/classes'
 import styles from '../styles/components/loader.module.css'
 
