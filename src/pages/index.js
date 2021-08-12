@@ -6,7 +6,7 @@ import Cards from '../components/cards'
 import Loader from '../components/loader'
 import Footer from '../components/footer'
 import Head from 'next/head'
-import { fetchDetailsForPokemons, getIdFromURL, filterVariants } from '../utils/pokemons'
+import { fetchDetailsForPokemons, filterVariants } from '../utils/pokemons'
 
 // TODO check of het mogelijk is ook de varianten te laten zien (dit zou het onderstaande probleem verhelpen + dan is de pokemon collectie echt compleet met schonere code)
 // TODO wanneer users verder dan pokemon 898 en een nieuwe fetch triggeren -> gebruikers zien kort de loading animation en dan meteen weer de 'load more' button maar omdat er geen nieuwe pokemons gefetched worden ziet het er raar uit (miss kan je hier iets op bedenken; bijv. de fetch button/hook weghalen/stoppen als ze op dit punt komen (alle varianten zijn toch altijd als laatste wegens hun index over 10.000))
@@ -79,7 +79,6 @@ export default function Home({ pokemonList, initialPokemons, next }) {
       <main>
         <Search pokemons={pokemonList} setFilteredPokemons={setFilteredPokemons} />
         <Cards pokemons={filteredPokemons} />
-        {/* <Cards pokemons={pokemons} /> */}
       </main>
 
       <div ref={setTargetElement}>
