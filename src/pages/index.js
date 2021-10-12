@@ -44,9 +44,11 @@ export default function Home({ data, next }) {
       // add property to identify if pokemon is fetched (../components/cards uses this to preload images above the fold)
       fetchedPokemons.forEach(pokemon => pokemon.isFetched = true)
 
-      // the api contains original pokemons and pokemon 'variants'
-      // all 'original' pokemons have an id of lower than 10000
-      // all 'variant' pokemons have an id higher than 10000
+      /*
+        the api contains original pokemons and pokemon 'variants'
+        all 'original' pokemons have an id of lower than 10000
+        all 'variant' pokemons have an id higher than 10000
+      */
 
       // filter out all non original (variant) pokemons
       const originalPokemons = fetchedPokemons.filter(pokemon => pokemon.id < 10000)
@@ -108,10 +110,12 @@ async function fetchPokemons(url = 'https://pokeapi.co/api/v2/pokemon?limit=40')
       const pokemonSpeciesRes = await fetch(pokemonData.species.url)
       const pokemonSpeciesData = await pokemonSpeciesRes.json()
 
-      // both pokemonData and pokemonSpeciesData contain an id
-      // all id's in pokemonData are unique, even 'variant' pokemons have an unique id (10000+)
-      // the pokemonSpeciesData id's are always the id's of the 'original' pokemon, even if the pokemon is a 'variant' (0 - 10000)
-      // the is always needs to be unique due to it being used to filter out pokemon 'variants'
+      /*
+        both pokemonData and pokemonSpeciesData contain an id
+        all id's in pokemonData are unique, even 'variant' pokemons have an unique id (10000+)
+        the pokemonSpeciesData id's are always the id's of the 'original' pokemon, even if the pokemon is a 'variant' (0 - 10000)
+        the is always needs to be unique due to it being used to filter out pokemon 'variants'
+      */
 
       // get rid of 'id' in pokemonSpeciesData
       delete pokemonSpeciesData.id

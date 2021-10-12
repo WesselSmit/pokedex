@@ -4,6 +4,11 @@ import { displayName, displayId } from '../utils/display'
 import styles from '../styles/components/cards.module.css'
 
 // TODO maak responsive
+/*
+  alles boven de 798px is prima
+  vanaf 798px moeten de cards kleiner worden zodat er langer 3 kolommen naast elkaar passen
+  evt op mobile full width gaan (met padding/margin eromheen)
+*/
 
 export default function Card({ pokemons }) {
   return (
