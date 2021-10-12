@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
-import Header from '../components/header'
-import Search from '../components/search'
-import Cards from '../components/cards'
-import Loader from '../components/loader'
-import Footer from '../components/footer'
+import Header from '../components/Header'
+import Search from '../components/Search'
+import Cards from '../components/Cards'
+import Loader from '../components/Loader'
+import Footer from '../components/Footer'
 import Head from 'next/head'
 
 // TODO check of het mogelijk is ook de varianten te laten zien (dit zou het onderstaande probleem verhelpen + dan is de pokemon collectie echt compleet met schonere code)
