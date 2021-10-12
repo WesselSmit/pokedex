@@ -42,7 +42,11 @@ export default function Header() {
               </Link>
             </li>
             <li className={styles.listItem}>
-              <a href="https://github.com/WesselSmit/pokedex" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/WesselSmit/pokedex"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <p className={ classNames(styles.link, styles.githubLink) }>Github</p>
                 <GithubIcon className={styles.githubIcon} />
               </a>

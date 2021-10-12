@@ -26,11 +26,24 @@ export default function Search() {
     <section className={styles.outer}>
       <div className={styles.inner}>
         <div className={styles.searchBar}>
-          <label htmlFor="search" onClick={focus} className={styles.label}>
+          <label
+            htmlFor="search"
+            onClick={focus}
+            className={styles.label}
+          >
             <SearchIcon className={styles.icon} />
           </label>
 
-          <input type="text" id="search" placeholder="Search by name or id" maxLength="15" autoComplete="off" spellCheck="false" ref={setInputElement} className={styles.input} />
+          <input
+            type="text"
+            id="search"
+            placeholder="Search by name or id"
+            maxLength="15"
+            autoComplete="off"
+            spellCheck="false"
+            ref={setInputElement}
+            className={styles.input}
+          />
           <button onClick={reset} className={styles.reset}></button>
         </div>
       </div>

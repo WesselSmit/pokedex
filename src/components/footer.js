@@ -25,7 +25,11 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <a href="https://github.com/WesselSmit/pokedex" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/WesselSmit/pokedex"
+          target="_blank"
+          rel="noreferrer"
+        >
           <p className={ classNames(styles.link, styles.githubLink) }>Github</p>
           <GithubIcon className={styles.icon} />
         </a>

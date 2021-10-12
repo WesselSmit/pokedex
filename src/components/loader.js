@@ -16,12 +16,22 @@ export default function Loader({ isLoading, hasError, incrementFetchIndex }) {
       }
 
       { !isLoading && hasError &&
-        <button onClick={incrementFetchIndex} className={ classNames(styles.button, styles.error) }>Click to retry</button>
+        <button
+          onClick={incrementFetchIndex}
+          className={ classNames(styles.button, styles.error) }
+        >
+          Click to retry
+        </button>
       }
 
       {/* fallback */}
       { !isLoading && !hasError &&
-        <button onClick={incrementFetchIndex} className={ classNames(styles.button, styles.load) }>Load more</button>
+        <button
+          onClick={incrementFetchIndex}
+          className={ classNames(styles.button, styles.load) }
+        >
+          Load more
+        </button>
       }
     </div>
   )

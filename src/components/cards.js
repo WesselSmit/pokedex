@@ -10,7 +10,7 @@ export default function Card({ pokemons }) {
     <section className={styles.outer}>
       <ul className={styles.list}>
         {pokemons.map(pokemon => {
-          const { name, types, sprites, names, id, isFetched = false } = pokemon
+          const { name, names, types, sprites, id, isFetched = false } = pokemon
           const mainType = types[0].type.name
           const artwork = sprites.other['official-artwork'].front_default
           const { name: japName } = names.find(nameObj => nameObj.language.name === 'ja')

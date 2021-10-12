@@ -79,7 +79,11 @@ export default function Home({ data, next }) {
       </main>
 
       <div ref={setTargetElement}>
-        <Loader isLoading={isFetching} hasError={hasError} incrementFetchIndex={incrementFetchIndex} />
+        <Loader
+          isLoading={isFetching}
+          hasError={hasError}
+          incrementFetchIndex={incrementFetchIndex}
+        />
       </div>
 
       <Footer />
