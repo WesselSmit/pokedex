@@ -35,7 +35,7 @@
 .label {
   display: grid;
   align-items: center;
-  padding: var(--space-xsm);
+  padding: var(--space-xsm-sm);
   color: inherit;
 }
 
@@ -46,7 +46,7 @@
 
 .input {
   width: 100%;
-  padding: var(--space-xsm) 0;
+  padding: var(--space-xsm-sm) 0;
   border: none;
 }
 
@@ -62,7 +62,7 @@
   display: none;
   width: var(--space-md-lg);
   height: var(--height-button);
-  padding: var(--space-xsm);
+  padding: var(--space-xsm-sm);
   cursor: pointer;
 }
 

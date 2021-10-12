@@ -1,4 +1,4 @@
-/* spacings, sizes, widths and heights */
+/* spacings */
 :root {
   /* spaces (margins & paddings) */
   --space-lg: 5rem;
@@ -6,15 +6,6 @@
   --space-md: 3rem;
   --space-sm-md: 2rem;
   --space-sm: 1.5rem;
-  --space-xsm: 1rem;
-
-  /* sizes (width & height) */
-  --size-card: 21.6rem;
-
-  /* widths */
-  --width-site: 120rem;
-  --width-search: 50rem;
-
-  /* heights */
-  --height-button: 4rem;
+  --space-xsm-sm: 1rem;
+  --space-xsm: .5rem;
 }

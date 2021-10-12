@@ -13,7 +13,7 @@
 }
 
 .heading {
-  margin-bottom: var(--space-xsm);
+  margin-bottom: var(--space-xsm-sm);
   font-size: var(--fsize-md-lg);
 }
 

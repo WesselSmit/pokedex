@@ -1,0 +1,13 @@
+/* sizes, widths and heights */
+:root {
+  /* sizes (width & height) */
+  --size-card-md: 21.6rem;
+  --size-card-sm: 17.5rem;
+
+  /* widths */
+  --width-site: 120rem;
+  --width-search: 50rem;
+
+  /* heights */
+  --height-button: 4rem;
+}

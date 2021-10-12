@@ -26,10 +26,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: var(--size-card);
-  height: var(--size-card);
+  width: var(--size-card-md);
+  height: var(--size-card-md);
   margin: var(--space-sm);
-  padding: var(--space-xsm) var(--space-xsm) .5rem;
+  padding: var(--space-xsm-sm) var(--space-xsm-sm) .5rem;
   background-color: rgba(var(--type-color), .15);
   color: rgb(var(--type-color));
   border: 2px solid transparent;
@@ -59,6 +59,12 @@
 .card:focus::before {
   opacity: 1;
   transform: translate(-50%, -100%);
+}
+
+.imageContainer {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
 }
 
 .image {
@@ -101,10 +107,48 @@
   line-height: .8;
 }
 
+.idSmall {
+  display: none;
+}
+
 
 @keyframes slide {
   from {
     opacity: 0;
     transform: translateY(100px);
+  }
+}
+
+
+@media only screen and (min-width: 450px) and (max-width: 798px) {
+  .card {
+    width: var(--size-card-sm);
+    height: var(--size-card-sm);
+    margin: var(--space-xsm-sm);
+    padding: .7rem var(--space-xsm) 0;
+  }
+
+  .imageContainer {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .name {
+    font-size: var(--fsize-sm);
+  }
+
+  .japaneseName {
+    font-size: 1rem;
+  }
+
+  .idSmall {
+    display: block;
+    margin-left: auto;
+    font-size: var(--fsize-xsm);
+    font-weight: var(--fweight-normal);
+  }
+
+  .idBig {
+    display: none;
   }
 }
