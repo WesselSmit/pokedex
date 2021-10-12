@@ -9,12 +9,13 @@
 
 .title {
   margin: 0 0 var(--space-md);
-  font-size: var(--fsize-lg);
+  font-size: var(--fsize-lg-xl);
 }
 
 .heading {
   margin-bottom: var(--space-xsm-sm);
   font-size: var(--fsize-md-lg);
+  font-weight: var(--fweight-semi-bold);
 }
 
 .text {
