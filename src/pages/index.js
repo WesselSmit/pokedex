@@ -63,7 +63,7 @@ export default function Home({ data, next }) {
   }
 
   // initialize infinite scroll (use 'rootMargin: 1000px' to start fetching new data before users see the end of screen)
-  useInfiniteScroll(targetElement, incrementFetchIndex, { rootMargin: '10000px' })
+  useInfiniteScroll(targetElement, incrementFetchIndex, { rootMargin: '1000px' })
 
   return (
     <>
