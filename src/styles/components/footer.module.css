@@ -47,11 +47,16 @@
   color: var(--color-gray);
 }
 
-.githubLink {
+.githubText {
   display: none;
 }
 
-.icon {
+.githubLink {
+  width: min-content;
+  margin: auto;
+}
+
+.githubIcon {
   /* gets rid of extra whitespace below the svg */
   display: block;
 
@@ -60,8 +65,8 @@
   transition: color var(--trans-basic);
 }
 
-.icon:hover,
-.icon:focus {
+.githubIcon:hover,
+.githubIcon:focus {
   color: var(--color-gray);
 }
 
@@ -97,12 +102,16 @@
     margin: 0 0 var(--space-sm) 0;
   }
 
-  .icon {
-    display: none;
+  .githubLink {
+    margin: 0;
   }
 
-  .githubLink {
+  .githubText {
     display: block;
+  }
+
+  .githubIcon {
+    display: none;
   }
 
   .copyright {

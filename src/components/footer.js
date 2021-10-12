@@ -29,9 +29,10 @@ export default function Footer() {
           href="https://github.com/WesselSmit/pokedex"
           target="_blank"
           rel="noreferrer"
+          className={styles.githubLink}
         >
-          <p className={ classNames(styles.link, styles.githubLink) }>Github</p>
-          <GithubIcon className={styles.icon} />
+          <p className={ classNames(styles.link, styles.githubText) }>Github</p>
+          <GithubIcon className={styles.githubIcon} />
         </a>
 
         <p className={styles.copyright}>© {currentYear} Wessel Smit</p>
