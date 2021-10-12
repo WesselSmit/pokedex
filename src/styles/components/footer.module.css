@@ -53,7 +53,7 @@
 
 .icon {
   /* gets rid of extra whitespace below the svg */
-  display: block; 
+  display: block;
 
   margin: auto;
   color: var(--color-black);

@@ -14,16 +14,16 @@ export default function Card({ pokemons }) {
           const mainType = types[0].type.name
           const artwork = sprites.other['official-artwork'].front_default
           const { name: japName } = names.find(nameObj => nameObj.language.name === 'ja')
-          
+
           return (
             // the type attribute is used in the css files (see ../styles/global/types.css)
             <li key={id} type={mainType} className={isFetched ? styles.item : null}>
               <Link href={'/' + id}>
                 <a className={styles.card}>
-                  <Image 
-                    src={artwork} 
-                    alt={'Image of ' + name} 
-                    width={150} 
+                  <Image
+                    src={artwork}
+                    alt={'Image of ' + name}
+                    width={150}
                     height={150}
                     priority={!isFetched}
                     className={styles.image}

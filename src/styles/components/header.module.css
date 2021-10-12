@@ -46,7 +46,7 @@
 
 .githubIcon {
   /* gets rid of extra whitespace below the svg */
-  display: block; 
+  display: block;
 
   color: var(--color-black);
   transition: color var(--trans-basic);

@@ -68,7 +68,7 @@
 
 .reset:hover::before,
 .reset:hover::after,
-.reset:focus::before, 
+.reset:focus::before,
 .reset:focus::after {
   background-color: var(--color-black);
 }
