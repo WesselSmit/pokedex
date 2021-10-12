@@ -1,0 +1,18 @@
+/* font related properties */
+:root {
+  /* families */
+  --ffamily-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  /* sizes */
+  --fsize-xl: 10rem;
+  --fsize-lg: 4rem;
+  --fsize-md-lg: 2.5rem;
+  --fsize-md: 1.6rem;
+  --fsize-sm: 1.4rem;
+  --fsize-xsm: 1.2rem;
+
+  /* weights */
+  --fweight-bold: 800;
+  --fweight-normal: 400;
+  --fweight-light: 300;
+}
