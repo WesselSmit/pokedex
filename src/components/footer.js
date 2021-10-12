@@ -1,4 +1,4 @@
-import GithubIcon from '../assets/githubIcon'
+import GithubIcon from '../assets/GithubIcon'
 import Link from 'next/link'
 import { classNames } from '../utils/classes'
 import styles from '../styles/components/footer.module.css'
