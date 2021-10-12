@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import SearchIcon from '../assets/searchIcon'
+import SearchIcon from '../assets/SearchIcon'
 import styles from '../styles/components/search.module.css'
 
 // TODO search function implementeren

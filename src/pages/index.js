@@ -46,7 +46,7 @@ export default function Home({ data, next }) {
 
       // the api contains original pokemons and pokemon 'variants'
       // all 'original' pokemons have an id of lower than 10000
-      // all 'variant' pokemons have an id higher than 10000 
+      // all 'variant' pokemons have an id higher than 10000
 
       // filter out all non original (variant) pokemons
       const originalPokemons = fetchedPokemons.filter(pokemon => pokemon.id < 10000)
@@ -129,6 +129,6 @@ export async function getStaticProps() {
       next
     },
     // regenerate static page every 24 hours (60 seconds x 60 minutes x 24 hours = 86400 seconds)
-    revalidate: 86400 
+    revalidate: 86400
   }
 }

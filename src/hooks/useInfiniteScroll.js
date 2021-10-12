@@ -13,8 +13,8 @@ export default function useInfiniteScroll(triggerEl, callback, options) {
     rootMargin: options?.rootMargin || '0px 0px 0px 0px',
     threshold: options?.threshold || 1,
   }
-  
-  
+
+
   // create and initialize IntersectionObserver
   const [observer, setObserver] = useState(null)
 
