@@ -20,7 +20,7 @@ export default function Home({ data, next }) {
   const [fetchIndex, setFetchIndex] = useState(0)
   const [pokemons, setPokemons] = useState(data)
   const [isFetching, setIsFetching] = useState(false)
-  const [isError, setIsError] = useState(false)
+  const [hasError, setHasError] = useState(false)
   const [targetElement, setTargetElement] = useState(null)
 
   function incrementFetchIndex() {
@@ -54,16 +54,16 @@ export default function Home({ data, next }) {
       setPokemons(pokemons => [...pokemons, ...originalPokemons])
       setNextFetchLink(next)
       setIsFetching(false)
-      setIsError(false)
+      setHasError(false)
     } catch (err) {
       setIsFetching(false)
-      setIsError(true)
+      setHasError(true)
       console.error('Failed to fetch pokémons.', err)
     }
   }
 
   // initialize infinite scroll (use 'rootMargin: 1000px' to start fetching new data before users see the end of screen)
-  useInfiniteScroll(targetElement, incrementFetchIndex, { rootMargin: '1000px' })
+  useInfiniteScroll(targetElement, incrementFetchIndex, { rootMargin: '10000px' })
 
   return (
     <>
@@ -79,7 +79,7 @@ export default function Home({ data, next }) {
       </main>
 
       <div ref={setTargetElement}>
-        <Loader isLoading={isFetching} isError={isError} incrementFetchIndex={incrementFetchIndex} />
+        <Loader isLoading={isFetching} hasError={hasError} incrementFetchIndex={incrementFetchIndex} />
       </div>
 
       <Footer />
