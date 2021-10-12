@@ -1,5 +1,5 @@
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import Head from 'next/head'
 import styles from '../styles/pages/404.module.css'
 

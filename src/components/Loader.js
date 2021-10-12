@@ -1,4 +1,4 @@
-import Pokeball from '../assets/pokeball'
+import Pokeball from '../assets/Pokeball'
 import { classNames } from '../utils/classes'
 import styles from '../styles/components/loader.module.css'
 
@@ -11,16 +11,16 @@ export default function Loader({ isLoading, isError, incrementFetchIndex }) {
 
   return (
     <div className={styles.outer}>
-      { isLoading && 
+      { isLoading &&
         <Pokeball className={styles.icon} />
       }
 
-      { isError && 
+      { isError &&
         <button onClick={incrementFetchIndex} className={ classNames(styles.button, styles.error) }>Click to retry</button>
       }
 
       {/* fallback */}
-      { !isLoading && !isError && 
+      { !isLoading && !isError &&
         <button onClick={incrementFetchIndex} className={ classNames(styles.button, styles.load) }>Load more</button>
       }
     </div>

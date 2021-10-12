@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   justify-content: center;
   /* ' + (2 * var(--space-sm))' is necessary to compensate for the horizontal margin around the first + last card of each row */
-  /* ideally we would use flex-gap instead of margin, but this isn't supported in safari at the moment */ 
+  /* ideally we would use flex-gap instead of margin, but this isn't supported in safari at the moment */
   /* we also cannot detect browser support for flex-gap due to a bug (https://stackoverflow.com/questions/55387748/how-to-check-for-gap-support-in-flexbox-layout) */
   max-width: calc(var(--width-site) + (2 * var(--space-sm)));
   margin: auto;
@@ -53,7 +53,7 @@
   transition: all var(--trans-fast);
 }
 
-.card:hover::before, 
+.card:hover::before,
 .card:focus::before {
   opacity: 1;
   transform: translate(-50%, -100%);

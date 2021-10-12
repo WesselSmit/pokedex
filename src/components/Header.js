@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import GithubIcon from '../assets/githubIcon'
+import GithubIcon from '../assets/GithubIcon'
 import Link from 'next/link'
 import Image from 'next/image'
 import { classNames } from '../utils/classes'
@@ -18,13 +18,13 @@ export default function Header() {
       <div className={styles.inner}>
         <Link href="/">
           <a>
-            <Image 
-              src="/logo.png" 
-              alt="Pokédex logo" 
-              width={150} 
-              height={54} 
+            <Image
+              src="/logo.png"
+              alt="Pokédex logo"
+              width={150}
+              height={54}
               priority="true"
-              className={styles.logo} 
+              className={styles.logo}
             />
           </a>
         </Link>

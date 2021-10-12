@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import SearchIcon from '../assets/searchIcon'
-import { fetchDetailsForPokemons, filterVariants } from '../utils/pokemons'
+import SearchIcon from '../assets/SearchIcon'
 import styles from '../styles/components/search.module.css'
 
 // TODO maak een aparte pagina voor search (als search component in /index input heeft push je /search naar browser, als search component in /index !input heeft push / naar browser) [dit zou betekenen dat je niet hoeft te kloten met de infiniteScroll] OF houdt search als een component ipv een page en gebruik redux

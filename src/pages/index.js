@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
-import Header from '../components/header'
-import Search from '../components/search'
-import Cards from '../components/cards'
-import Loader from '../components/loader'
-import Footer from '../components/footer'
+import Header from '../components/Header'
+import Search from '../components/Search'
+import Cards from '../components/Cards'
+import Loader from '../components/Loader'
+import Footer from '../components/Footer'
 import Head from 'next/head'
 import { fetchDetailsForPokemons, filterVariants } from '../utils/pokemons'
 
@@ -107,13 +107,13 @@ export async function getStaticProps() {
 
   const res = await fetch(defaultFetchURL + count)
   const { results: pokemonList } = await res.json()
-  
+
   // assign each pokemon their id
   // use the 'pokemon.url' instead of forEach index because the api gives pokemon 'variants' an index of 10000+
   pokemonList.forEach(pokemon => {
     // get pokemon id from url
     const URLParts = pokemon.url.split('/')
-    const id = URLParts[URLParts.length - 2] 
+    const id = URLParts[URLParts.length - 2]
     pokemon.id = id
   })
 
@@ -124,6 +124,6 @@ export async function getStaticProps() {
       next
     },
     // regenerate static page every 24 hours (60 seconds x 60 minutes x 24 hours = 86400 seconds)
-    revalidate: 86400 
+    revalidate: 86400
   }
 }
